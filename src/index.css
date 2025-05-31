@@ -1,0 +1,251 @@
+/* ============================
+   Global Base Styles
+   ============================ */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--ant-color-bg-base);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+:root {
+  --container-max-width: 1200px;
+  --container-md-max-width: 1000px;
+}
+
+/* ============================
+   Layout & Container
+   ============================ */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: var(--container-md-max-width);
+  }
+}
+
+/* ============================
+   AntD Layout Overrides
+   ============================ */
+.ant-layout {
+  min-height: 100vh;
+}
+
+.ant-layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 56px;
+  line-height: 56px;
+  padding: 0 24px !important;
+  background: #001529;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ant-layout-header .logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+
+.ant-layout-content {
+  background: var(--ant-color-bg-container);
+  margin: 24px 0;
+  padding: 24px;
+  border-radius: var(--ant-border-radius);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px;
+}
+
+/* ============================
+   AntD Card Hover Effects
+   ============================ */
+.ant-card {
+  border-radius: var(--ant-border-radius);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 18px;
+}
+
+/* ============================
+   Links & Headings
+   ============================ */
+a {
+  text-decoration: none;
+}
+
+h2 {
+  margin-bottom: 24px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* ============================
+   Pagination
+   ============================ */
+.pagination-container {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.pagination-container .ant-pagination-item-active a {
+  color: #1890ff;
+}
+
+.pagination-container .ant-pagination-item a {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.pagination-container .ant-pagination-next .anticon,
+.pagination-container .ant-pagination-prev .anticon {
+  color: #1890ff;
+}
+
+/* ============================
+   Navbar: Cart Icon & Badge
+   ============================ */
+.cart-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.cart-icon-wrapper:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.cart-icon-wrapper .anticon {
+  font-size: 20px;
+  color: #fff;
+}
+
+.ant-badge-count {
+  font-size: 10px !important;
+  min-width: 18px !important;
+  height: 18px !important;
+  line-height: 18px !important;
+  box-shadow: 0 0 0 2px #001529;
+}
+
+/* ============================
+   Product Listing
+   ============================ */
+.product-card-container {
+  display: flex;
+  justify-content: center;
+}
+.search-filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  .ant-input-search {
+    max-width: 600px;
+    width: 100%;
+    font-size: 14px;
+  }
+  .ant-select {
+    max-width: 200px;
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+/* ============================
+   Product Details Styles
+   ============================ */
+.product-details-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 12px;
+  margin-top: 24px;
+}
+
+.product-details-card {
+  .product-image-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f0f2f5;
+    margin-bottom: 16px;
+  }
+  .product-image-container img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .product-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .product-price {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: rgba(0, 0, 0, 0.85);
+  }
+
+  .product-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  .button-group {
+    display: flex;
+    gap: 16px;
+  }
+  .button-group .ant-btn {
+    min-width: 140px;
+    height: 48px;
+    font-size: 16px;
+  }
+  .button-group .ant-btn-default {
+    color: rgba(0, 0, 0, 0.85);
+    border-color: rgba(0, 0, 0, 0.15);
+  }
+  .button-group .ant-btn-default:hover {
+    background: rgba(0, 0, 0, 0.03);
+  }
+}
+
+@media (max-width: 576px) {
+  .product-details-card {
+    padding: 16px;
+  }
+  .product-details-card .button-group {
+    flex-direction: column;
+  }
+  .product-details-card .button-group .ant-btn {
+    width: 100%;
+  }
+}
