@@ -24,7 +24,7 @@ const ProductDetails: React.FC = () => {
   };
 
   return (
-    <div className="container">
+    <div className="limited-container">
       <div className="product-details-card">
         <Row gutter={[32, 32]}>
           <Col xs={24} md={10}>

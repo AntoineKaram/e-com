@@ -16,10 +16,9 @@ function generateProduct(id: number): Product {
     name: faker.commerce.productName(),
     description: faker.commerce.productDescription(),
     price: parseFloat(faker.commerce.price({ min: 5, max: 500, dec: 2 })),
-    image: faker.image.urlLoremFlickr({
+    image: faker.image.urlPicsumPhotos({
       width: 200,
       height: 200,
-      category: "tech",
     }),
   };
 }

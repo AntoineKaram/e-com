@@ -33,6 +33,15 @@ const cartSlice = createSlice({
     clearCart(state) {
       state.items = {};
     },
+    updateQuantity(
+      state,
+      action: PayloadAction<{ productId: string; quantity: number }>
+    ) {
+      const { productId, quantity } = action.payload;
+      if (state.items[productId]) {
+        state.items[productId].quantity = quantity;
+      }
+    },
   },
 });
 

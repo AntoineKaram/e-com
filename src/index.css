@@ -13,7 +13,7 @@ body,
 }
 
 :root {
-  --container-max-width: 1200px;
+  --container-max-width: 1500px;
   --container-md-max-width: 1000px;
 }
 
@@ -21,13 +21,18 @@ body,
    Layout & Container
    ============================ */
 .container {
-  max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 24px;
 }
-
+.limited-container {
+  margin: 0 auto;
+  padding: 0 24px;
+  max-width: var(--container-max-width);
+}
 @media (max-width: 576px) {
-  .container {
+  .limited-container {
+    margin: 0 auto;
+    padding: 0 24px;
     max-width: var(--container-md-max-width);
   }
 }
@@ -61,8 +66,7 @@ body,
 
 .ant-layout-content {
   background: var(--ant-color-bg-container);
-  margin: 24px 0;
-  padding: 24px;
+  padding-top: 24px;
   border-radius: var(--ant-border-radius);
   box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px;
 }
@@ -247,5 +251,65 @@ h2 {
   }
   .product-details-card .button-group .ant-btn {
     width: 100%;
+  }
+}
+/* ============================
+   Cart Page + Item Overrides
+   ============================ */
+.cart-details-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 12px;
+  margin-top: 24px;
+}
+
+.ant-input-number {
+  width: 60px;
+}
+
+.ant-input-number .ant-input-number-handler-wrap {
+  display: none;
+}
+
+.ant-btn-danger {
+  border-radius: 4px;
+  padding: 0 16px;
+  height: 32px;
+  font-size: 14px;
+}
+
+.ant-btn {
+  border-radius: 4px;
+}
+
+.cart-details-card .ant-typography {
+  margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .cart-details-card {
+    padding: 16px;
+  }
+}
+.ant-list-outer {
+  padding: 0 !important;
+}
+.product-listing-container {
+  --webkit-overflow-scrolling: touch;
+  height: 70vh;
+  overflow-y: auto;
+  .ant-list-item {
+    padding: 8px 0;
+  }
+  .ant-list-item {
+    display: flex;
+    justify-content: center;
+  }
+  .ant-spin {
+    margin-top: 16px;
+  }
+  .ant-row {
+    margin: 0 !important;
   }
 }
